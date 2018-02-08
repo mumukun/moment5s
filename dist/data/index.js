@@ -1,0 +1,8 @@
+'use strict';
+
+var _picture = require('./picture.js');
+
+module.exports = {
+  pictureData: _picture.pictureData
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbIm1vZHVsZSIsImV4cG9ydHMiLCJwaWN0dXJlRGF0YSJdLCJtYXBwaW5ncyI6Ijs7QUFBQTs7QUFDQUEsT0FBT0MsT0FBUCxHQUFpQjtBQUNmQztBQURlLENBQWpCIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgcGljdHVyZURhdGEgfSBmcm9tICcuL3BpY3R1cmUuanMnXG5tb2R1bGUuZXhwb3J0cyA9IHtcbiAgcGljdHVyZURhdGE6IHBpY3R1cmVEYXRhXG59XG4iXX0=
