@@ -7,6 +7,9 @@
   box-sizing: border-box;
 }
 
+Page {
+  background-color: #f5f5f5;
+}
 </style>
 
 <script>
@@ -19,6 +22,7 @@ export default class extends wepy.app {
       'pages/index'
     ],
     window: {
+      backgroundColor: '#f5f5f5',
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
@@ -30,7 +34,7 @@ export default class extends wepy.app {
     userInfo: null
   }
 
-  constructor () {
+  constructor() {
     super()
     this.use('requestfix')
   }
@@ -39,7 +43,7 @@ export default class extends wepy.app {
     this.testAsync()
   }
 
-  sleep (s) {
+  sleep(s) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve('promise resolved')
@@ -47,7 +51,7 @@ export default class extends wepy.app {
     })
   }
 
-  async testAsync () {
+  async testAsync() {
     const data = await this.sleep(3)
     console.log(data)
   }
@@ -58,7 +62,7 @@ export default class extends wepy.app {
       return this.globalData.userInfo
     }
     wepy.getUserInfo({
-      success (res) {
+      success(res) {
         that.globalData.userInfo = res.userInfo
         cb && cb(res.userInfo)
       }

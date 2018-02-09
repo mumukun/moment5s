@@ -21,22 +21,24 @@
 </style>
 <template>
     <view class="container">
-        <view wx:for="{{pictureList}}" style="width:100%">
-            <image mode="aspectFill" lazy-load="true" class="image" src="{{item.imgUrl}}" />
-        </view>
+        <repeat for="{{pictureList}}">
+            <card :content="item.content" :stars="item.starsAmount" :comments="item.commentsAmount" :reviews="item.commentsAmount" :imgUrl="item.imgUrl" />
+        </repeat>
     </view>
 </template>
 
 <script>
 import wepy from 'wepy'
+import Card from '../components/card'
 import Toast from 'wepy-com-toast'
 import pictureData from '../data/picture.js'
 
 export default class Index extends wepy.page {
     config = {
-        navigationBarTitleText: 'Moment5s'
+        navigationBarTitleText: "Moment5s",
     }
     components = {
+        card: Card,
         toast: Toast
     }
 
@@ -44,7 +46,10 @@ export default class Index extends wepy.page {
         userInfo: {
             nickName: '加载中...'
         },
-        pictureList: []
+        pictureList: [],
+        isLoadingMore: false,
+        currentPage: 1,
+        info: ''
     }
 
     computed = {
@@ -64,7 +69,6 @@ export default class Index extends wepy.page {
     onLoad() {
         let self = this
         console.log('this===', this)
-        this.getPictureData()
         this.$parent.getUserInfo(function(userInfo) {
             if (userInfo) {
                 self.userInfo = userInfo
@@ -79,12 +83,40 @@ export default class Index extends wepy.page {
 
             self.$apply()
         })
+        this.loadList()
     }
-    getPictureData() {
+    onPullDownRefresh() {
+        console.log('onPullDownRefresh')
+    }
+    onReachBottom() {
+        console.log('bottom')
+        this.currentPage++
+        if (this.currentPage >= 10) { // 最多只能加载10页
+            this.isLoadingMore = false
+            this.info = 'No more news'
+            this.$apply()
+            return
+        }
+        this.isLoadingMore = true
+        this.loadList()
+    }
+    loadList() {
+        // wx.request({
+        //     url: `https://www.shanbay.com/api/v2/news/articles/?ipp=10&page=${this.currentPage}`,
+        //     success: (res) => {
+        //         if (res.data.msg === 'SUCCESS') {
+        // this.pictureList = this.pictureList.concat(pictureData.data || [])
+        //         }
+        //         this.$apply()
+        //         wx.hideLoading()
+        //     }
+        // })
+
         console.log('this，getPictureData')
         console.log('pictureData', pictureData)
         let self = this
-        this.pictureList = pictureData.data || []
+        this.pictureList = this.pictureList.concat(pictureData.data || [])
+        self.$apply()
         console.log('self', self)
     }
 }

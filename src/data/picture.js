@@ -3,38 +3,38 @@ const pictureData = {
     data: [
         {
             imgUrl: 'http://ovc7j3cn8.bkt.clouddn.com/1516535872184123.png',
-            intro: 'Uhjhp Www Krnqe Hsgjw',
-            startAmount: 9,
+            content: 'Uhjhp Www Krnqe Hsgjw',
+            starsAmount: 9,
             commentsAmount: 4
         }, {
             imgUrl: 'http://ovc7j3cn8.bkt.clouddn.com/1516535872184123.png',
-            intro: 'Uhjhp Www Krnqe Hsgjw',
-            startAmount: 9,
+            content: 'Uhjhp Www Krnqe Hsgjw',
+            starsAmount: 9,
             commentsAmount: 4
         }, {
             imgUrl: 'http://ovc7j3cn8.bkt.clouddn.com/1516535872184123.png',
-            intro: 'Uhjhp Www Krnqe Hsgjw',
-            startAmount: 9,
+            content: 'Uhjhp Www Krnqe Hsgjw',
+            starsAmount: 9,
             commentsAmount: 4
         }, {
             imgUrl: 'http://ovc7j3cn8.bkt.clouddn.com/1516535872184123.png',
-            intro: 'Uhjhp Www Krnqe Hsgjw',
-            startAmount: 9,
+            content: 'Uhjhp Www Krnqe Hsgjw',
+            starsAmount: 9,
             commentsAmount: 4
         }, {
             imgUrl: 'http://ovc7j3cn8.bkt.clouddn.com/1516535872184123.png',
-            intro: 'Uhjhp Www Krnqe Hsgjw',
-            startAmount: 9,
+            content: 'Uhjhp Www Krnqe Hsgjw',
+            starsAmount: 9,
             commentsAmount: 4
         }, {
             imgUrl: 'http://ovc7j3cn8.bkt.clouddn.com/1516535872184123.png',
-            intro: 'Uhjhp Www Krnqe Hsgjw',
-            startAmount: 9,
+            content: 'Uhjhp Www Krnqe Hsgjw',
+            starsAmount: 9,
             commentsAmount: 4
         }, {
             imgUrl: 'http://ovc7j3cn8.bkt.clouddn.com/1516535872184123.png',
-            intro: 'Uhjhp Www Krnqe Hsgjw',
-            startAmount: 9,
+            content: 'Uhjhp Www Krnqe Hsgjw',
+            starsAmount: 9,
             commentsAmount: 4
         }
     ],

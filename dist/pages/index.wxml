@@ -1,6 +1,23 @@
 
     <view class="container">
-        <view  wx:for="{{pictureList}}" style="width:100%">
-            <image mode="aspectFill" lazy-load="true" class="image" src="{{item.imgUrl}}"/>
+        <block wx:for="{{pictureList}}" wx:for-index="index" wx:for-item="item" wx:key="key">
+            
+    <view class="card">
+        <view class="content-area">
+            <view>
+                <image mode="aspectFill" lazy-load="true" class="image" src="{{item.imgUrl}}"/>
+            </view>
+            <view class="area">
+                <view class="card-content">{{item.content}}</view>
+                <view class="info-area">
+                    <text class="stars">{{item.starsAmount}}</text>
+                    <text class="comments">{{item.commentsAmount}}</text>
+                    <text class="reviews">{{item.commentsAmount}}</text>
+                </view>
+            </view>
+
         </view>
+    </view>
+
+        </block>
     </view>
